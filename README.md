@@ -20,7 +20,7 @@ Compatible distributions include:
 - **Fedora KDE Spin** (Fedora 40, 41, 42, 43+)
 - **Arch Linux / Manjaro / EndeavourOS**
 - **openSUSE**
-- **Debian**
+- **Debian / Ubuntu**
 
 > [!NOTE]
 > The only requirements are:
