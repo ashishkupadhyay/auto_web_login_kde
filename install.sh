@@ -2,25 +2,24 @@
 set -e
 
 echo "=========================================================="
-echo "    VIT Portal Login Plasmoid Installer for Fedora KDE    "
+echo "    VIT Portal Login Plasmoid Installer for KDE Plasma    "
 echo "=========================================================="
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# Check required dependencies
-MISSING_DEPS=""
-for pkg in cmake extra-cmake-modules gcc-c++ qt6-qtbase-devel qt6-qtdeclarative-devel; do
-    if ! rpm -q $pkg &> /dev/null; then
-        MISSING_DEPS="$MISSING_DEPS $pkg"
+# Check for essential build tools
+MISSING_TOOLS=""
+for tool in cmake gcc g++ make; do
+    if ! command -v $tool &> /dev/null; then
+        MISSING_TOOLS="$MISSING_TOOLS $tool"
     fi
 done
 
-if [ -n "$MISSING_DEPS" ]; then
-    echo "Notice: Recommended build packages may be missing: $MISSING_DEPS"
-    echo "If the build fails, install them via:"
-    echo "  sudo dnf install $MISSING_DEPS"
-    echo ""
+if [ -n "$MISSING_TOOLS" ]; then
+    echo "Error: Required build tools missing:$MISSING_TOOLS"
+    echo "Please install CMake, GCC, and Make using your distribution's package manager."
+    exit 1
 fi
 
 # Configure and build
@@ -42,6 +41,6 @@ echo "1. Right-click on your KDE panel or desktop -> 'Add Widgets...'"
 echo "2. Search for 'VIT Portal Login'."
 echo "3. Drag it onto your panel or desktop."
 echo ""
-echo "If the widget does not appear immediately, restart Plasma:"
+echo "If the widget does not appear immediately, restart Plasma Shell:"
 echo "  systemctl --user restart plasma-plasmashell"
 echo "=========================================================="
