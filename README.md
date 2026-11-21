@@ -1,4 +1,4 @@
-# VIT Portal Login — KDE Plasma 6 Widget (Plasmoid)
+# VIT Portal Login - KDE Plasma 6 Widget (Plasmoid)
 
 [![KDE Plasma](https://img.shields.io/badge/KDE%20Plasma-6.0%2B-blue.svg)](https://kde.org/plasma-desktop/)
 [![Qt](https://img.shields.io/badge/Qt-6.x-brightgreen.svg)](https://qt.io)
