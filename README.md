@@ -17,7 +17,7 @@ Built with **C++17, Qt 6, KDE Frameworks (ECM), and Kirigami**.
 This plasmoid is **supported on any Linux distribution running KDE Plasma 6.0 or higher** with NetworkManager. 
 
 Compatible distributions include:
-- **Fedora KDE Spin** (Fedora 40, 41, 42, 43+)
+- **Fedora**
 - **Arch Linux / Manjaro / EndeavourOS**
 - **openSUSE**
 - **Debian / Ubuntu**
