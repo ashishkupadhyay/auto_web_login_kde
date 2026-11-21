@@ -107,7 +107,7 @@ sudo apt install cmake extra-cmake-modules build-essential \
 
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/your-username/auto_web_login_kde.git
+   git clone https://github.com/ashishkupadhyay/auto_web_login_kde.git
    cd auto_web_login_kde
    ```
 
