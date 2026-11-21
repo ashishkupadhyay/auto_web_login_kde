@@ -12,19 +12,15 @@ Built with **C++17, Qt 6, KDE Frameworks (ECM), and Kirigami**.
 
 ---
 
-## 🌐 Supported Platforms
+## Supported Platforms
 
 This plasmoid is **supported on any Linux distribution running KDE Plasma 6.0 or higher** with NetworkManager. 
 
 Compatible distributions include:
 - **Fedora KDE Spin** (Fedora 40, 41, 42, 43+)
 - **Arch Linux / Manjaro / EndeavourOS**
-- **openSUSE** (Tumbleweed, Slowroll, Leap 16+)
-- **KDE neon** (User / Testing / Unstable Edition)
-- **Kubuntu** (24.10 Oracular Oriole and newer with Plasma 6)
-- **TUXEDO OS**
-- **Debian** (Testing / Unstable with Plasma 6)
-- **NixOS / Void Linux / Gentoo** (with KDE Plasma 6)
+- **openSUSE**
+- **Debian**
 
 > [!NOTE]
 > The only requirements are:
@@ -33,7 +29,7 @@ Compatible distributions include:
 
 ---
 
-## ✨ Features
+## Features
 
 - **Automatic Login**: Automatically authenticates when connected to recognized VIT campus Wi-Fi networks after a short DHCP stabilization period.
 - **Campus Network Auto-Detection**: Monitors active NetworkManager connections via DBus and detects:
@@ -49,7 +45,7 @@ Compatible distributions include:
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 auto_web_login_kde/
@@ -76,7 +72,7 @@ auto_web_login_kde/
 
 ---
 
-## 🛠️ Build Dependencies by Distribution
+## Build Dependencies by Distribution
 
 Before building, install CMake, Extra CMake Modules (ECM), and Qt 6 development libraries for your distribution:
 
@@ -105,7 +101,7 @@ sudo apt install cmake extra-cmake-modules build-essential \
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Method 1: Automated Installer (Recommended)
 
@@ -138,7 +134,7 @@ sudo cmake --install build
 
 ---
 
-## 🖥️ Adding the Widget to Plasma
+## Adding the Widget to Plasma
 
 1. Right-click on your KDE panel or desktop and select **Add Widgets...** (or press `Meta + W`).
 2. Search for **VIT Portal Login**.
@@ -150,7 +146,7 @@ sudo cmake --install build
 
 ---
 
-## 🔑 First-Time Setup & Usage
+## First-Time Setup & Usage
 
 1. Click the widget on your panel.
 2. If credentials are not yet configured, the onboarding screen will prompt for:
@@ -161,6 +157,6 @@ sudo cmake --install build
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [GNU General Public License v2.0 or later (GPL-2.0+)](LICENSE).
