@@ -1,4 +1,4 @@
-# VIT Portal Login - KDE Plasma 6 Widget (Plasmoid)
+# VIT Portal Login: KDE Plasma 6 Widget (Plasmoid)
 
 [![KDE Plasma](https://img.shields.io/badge/KDE%20Plasma-6.0%2B-blue.svg)](https://kde.org/plasma-desktop/)
 [![Qt](https://img.shields.io/badge/Qt-6.x-brightgreen.svg)](https://qt.io)
@@ -17,14 +17,18 @@ Built with **C++17, Qt 6, KDE Frameworks (ECM), and Kirigami**.
 This plasmoid is **supported on any Linux distribution running KDE Plasma 6.0 or higher** with NetworkManager. 
 
 Compatible distributions include:
-- **Fedora**
+- **Fedora KDE Spin** (Fedora 40, 41, 42, 43+)
 - **Arch Linux / Manjaro / EndeavourOS**
-- **openSUSE**
-- **Debian / Ubuntu**
+- **openSUSE** (Tumbleweed, Slowroll, Leap 16+)
+- **KDE neon** (User / Testing / Unstable Edition)
+- **Kubuntu** (24.10 Oracular Oriole and newer with Plasma 6)
+- **TUXEDO OS**
+- **Debian** (Testing / Unstable with Plasma 6)
+- **NixOS / Void Linux / Gentoo** (with KDE Plasma 6)
 
 > [!NOTE]
-> The only requirements are:
-> 1. **KDE Plasma 6** (Plasma 6.0+) & Qt 6
+> The requirements are:
+> 1. **KDE Plasma 6** (Plasma 6.0+) and Qt 6
 > 2. **NetworkManager** for Wi-Fi network detection
 
 ---
@@ -33,8 +37,8 @@ Compatible distributions include:
 
 - **Automatic Login**: Automatically authenticates when connected to recognized VIT campus Wi-Fi networks after a short DHCP stabilization period.
 - **Campus Network Auto-Detection**: Monitors active NetworkManager connections via DBus and detects:
-  - `VIT 2.4G` & `VIT 5G`
-  - Hostel block Wi-Fi networks: `[A-T]-VIT` (e.g. `A-VIT`, `M-VIT`, `Q-VIT`, etc.)
+  - `VIT 2.4G` and `VIT 5G`
+  - Hostel block Wi-Fi networks: `[A-T]-VIT` (such as `A-VIT`, `M-VIT`, `Q-VIT`)
 - **Interactive Kirigami Flyout**:
   - First-time setup onboarding form to save your registration credentials.
   - Active SSID header and status messages.
@@ -51,7 +55,8 @@ Compatible distributions include:
 auto_web_login_kde/
 ├── CMakeLists.txt                       # Build system configuration
 ├── install.sh                           # 1-click build and install script
-├── Makefile                             # make build, make install, make clean
+├── uninstall.sh                         # 1-click uninstaller script
+├── Makefile                             # make build, make install, make uninstall, make clean
 ├── package/                             # Plasmoid package definition
 │   ├── metadata.json                    # Plasma applet metadata (ID: org.kde.plasma.vitportallogin)
 │   ├── icon.svg                         # Widget icon
@@ -119,7 +124,7 @@ sudo apt install cmake extra-cmake-modules build-essential \
 
 ---
 
-### Method 2: Manual CMake Build & Install
+### Method 2: Manual CMake Build and Install
 
 ```bash
 # 1. Configure the build directory
@@ -146,7 +151,7 @@ sudo cmake --install build
 
 ---
 
-## First-Time Setup & Usage
+## First-Time Setup and Usage
 
 1. Click the widget on your panel.
 2. If credentials are not yet configured, the onboarding screen will prompt for:
@@ -154,6 +159,43 @@ sudo cmake --install build
    - **Password**
 3. Click **Save and continue**.
 4. The widget will now automatically log in whenever you connect to campus Wi-Fi.
+
+---
+
+## Uninstallation
+
+### Method 1: Using the Automated Script (Recommended)
+
+Run the included uninstaller script:
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+
+---
+
+### Method 2: Manual Removal via Terminal
+
+```bash
+# 1. If built with CMake in this directory:
+sudo xargs rm -f < build/install_manifest.txt
+
+# Or remove installed files directly from system paths:
+sudo rm -rf /usr/share/plasma/plasmoids/org.kde.plasma.vitportallogin
+sudo rm -rf /usr/lib64/qt6/qml/org/kde/plasma/private/vitportal
+sudo rm -rf /usr/lib/qt6/qml/org/kde/plasma/private/vitportal
+
+# 2. Restart Plasma Shell
+systemctl --user restart plasma-plasmashell
+```
+
+---
+
+### Method 3: Using Makefile
+
+```bash
+make uninstall
+```
 
 ---
 
